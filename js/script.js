@@ -28,10 +28,12 @@ function fitAllMonthTexts() {
     const titleElements = document.querySelectorAll(".eventTitle");
     const monthElements = document.querySelectorAll(".campCard-Month");
     const dateElements = document.querySelectorAll(".campCard-Date");
+    //const heroElements = document.querySelectorAll(".heroSection");
     
     titleElements.forEach(el => fitTextToWidth(el, 35, 8));
     monthElements.forEach(el => fitTextToWidth(el, 60, 8));
     dateElements.forEach(el => fitTextToWidth(el, 90, 10));
+    //heroElements.forEach(el => fitTextToWidth(el, 35, 8));
 }
 
 window.addEventListener("load", fitAllMonthTexts);
