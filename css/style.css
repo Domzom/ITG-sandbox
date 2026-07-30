@@ -281,6 +281,58 @@ nav a:hover {
 
 }
 
+/* Bio */
+
+.staffBios,.bioInfo,.bio,.bioPhoto {
+    display: flex;
+    flex-direction: column;
+}
+
+.staffBios h1, h2{
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.staffBios h1 {
+    margin-top: 3em;
+}
+
+.staffBios .iconHolder svg path {
+    stroke: gray;
+}
+
+.bio {
+    flex-direction: row;
+    padding: 2rem;
+    gap: 4rem;
+}
+
+.bio.left {
+    flex-direction: row-reverse;
+}
+
+.bioInfo {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.bioPhoto {
+    flex: 1;
+    display: flex;
+    height: 250px;
+    border-radius: 3rem;
+    background-color: transparent;
+    overflow: hidden;
+    transition: transform 300ms cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.bioPhoto img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 /* Footer */
 
 footer {

@@ -36,5 +36,33 @@ function fitAllMonthTexts() {
     //heroElements.forEach(el => fitTextToWidth(el, 35, 8));
 }
 
+function checkCollision(rect1, rect2){
+    var overlap = !(rect1.right < rect2.left ||
+                    rect1.left > rect2. right ||
+                    rect1.bottom < rect2.top ||
+                    rect1.top > rect2.bottom);
+
+    return overlap;
+}
+
+function convertNav(){
+    const navHeader = document.querySelectorAll(".headercontainer");
+    const shopifyBtn = document.querySelectorAll(".shopify-btn-container");
+
+    let navHeaderRect = new Array();
+    let shopifyBtnRect = new Array();
+
+    navHeader.forEach(el => navHeaderRect.push(el.getBoundingClientRect()));
+    shopifyBtn.forEach(el => shopifyBtnRect.push(el.getBoundingClientRect()));
+
+    for (let i = 0; i < navHeaderRect.length; i++){
+        if (checkCollision(navHeaderRect[i], shopifyBtnRect['0'])){
+            navHeader[i].style.display = "none";
+        }
+    }
+    
+}
+
 window.addEventListener("load", fitAllMonthTexts);
 window.addEventListener("resize", fitAllMonthTexts);
+//window.addEventListener("resize", convertNav);
