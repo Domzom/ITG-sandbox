@@ -17,39 +17,16 @@
 </head>
 <body>
 
-    <header>
-
-        <div class="headercontainer">
-            <nav class = "navbar">
-                <span id="mainLogo">
-                    <img src="img/logo_home_colored.svg" alt="">
-                </span>
-                <ul class="nav-links", id="navLinks">
-                    <li><a href="/index.html" class="hover-underline-animation center">home</a></li>
-                    <li><a href="/about.html" class="hover-underline-animation center">about</a></li>
-                    <li><a href="/contact.html" class="hover-underline-animation center">contact</a></li>
-                </ul>
-                <button class="nav-toggle", id="navToggle", aria-expanded='false', aria-controls="navLinks">&#9776;</button>
-                <div class="shopify-btn-container">
-                    <div class="text-box">
-                        <a href="https://imagination-tailor-gaming.myshopify.com" target="_blank" rel="noopener noreferrer" class="btn-shopify  btn-shopify-animated">Access<br>Shopify</a>
-                    </div>
-                </div>
-            </nav>
-
-            
-            <script>
-                const toggle = document.getElementById('navToggle');
-                const links = document.getElementById('navLinks');
-                toggle.addEventListener('click', () => {
-                    const isOpen = links.classList.toggle('open');
-                    toggle.setAttribute('aria-expanded', isOpen);
-                });
-            </script>
-
-        </div>
-
+    <header id="header">
     </header>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
 
     <section class="heroSection">
         <div class="container">
@@ -65,7 +42,7 @@
                 <div class="heroSection-btn-container">
                 
                     <div class="hero-btn-area">
-                        <a href="#" rel="noopener noreferrer">
+                        <a href="/about.html" rel="noopener noreferrer">
 
                                Learn more                            
                             <span class="iconHolder">
@@ -75,7 +52,7 @@
                             </span>
                         </a>
 
-                        <a href="https://imagination-tailor-gaming.myshopify.com" target="_blank" rel="noopener noreferrer" class="">
+                        <a href="https://imagination-tailor-gaming.myshopify.com/collections/all" target="_blank" rel="noopener noreferrer" class="">
                                 Book your game now 
                                 <span class="iconHolder">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 48 48" fill="none">
@@ -121,7 +98,7 @@
 
                     <div class="cardTag-Container">
                         <div class="cardTag"></div>
-                        <div class="cardTag adultgame"></div>
+                        <!--<div class="cardTag adultgame"></div>-->
                         <div class="cardTag kidsgame"></div>
                     </div>
                     
@@ -132,8 +109,8 @@
                     <div class="campCard-infoBox">
                         <div class="campCard-MonthBox">
                             <div class="month-txtbox">
-                                <h3 class="campCard-Month">April</h3>
-                                <h2 class="campCard-Date">15th</h2>
+                                <h3 class="campCard-Month">August</h3>
+                                <h2 class="campCard-Date">17th</h2>
                             </div>
                         </div>
 
@@ -148,19 +125,15 @@
                                         <path d="M10.875 14C12.6009 14 14 12.6009 14 10.875C14 9.14911 12.6009 7.75 10.875 7.75C9.14911 7.75 7.75 9.14911 7.75 10.875C7.75 12.6009 9.14911 14 10.875 14Z" stroke="#00A9F7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </span>
-                                Gamestore, Seattle
+                                Phoenix Comics, Seattle
                             </h3>
 
                             <h2 class="eventTitle">
-                                Cool event Title
+                                Summer Camp
                             </h2>
 
                             <span>
-                                One line description
-                            </span>
-
-                            <span>
-                                Gaming for kids
+                                All-week Kids D&D Camp!
                             </span>
                             
                             <span class="cardPrice">
@@ -181,6 +154,7 @@
 
         <section class="productsShowCase">
 
+            
             <h1>Private Games</h1>
 
             <div class="product">
@@ -211,12 +185,12 @@
                                 <path d="M5.16667 5.16667H5.175M16.4917 10.5083L10.5167 16.4833C10.3619 16.6383 10.1781 16.7612 9.97573 16.8451C9.7734 16.929 9.55653 16.9721 9.3375 16.9721C9.11847 16.9721 8.9016 16.929 8.69927 16.8451C8.49694 16.7612 8.31312 16.6383 8.15833 16.4833L1 9.33333V1H9.33333L16.4917 8.15833C16.8021 8.4706 16.9763 8.89302 16.9763 9.33333C16.9763 9.77364 16.8021 10.1961 16.4917 10.5083Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </span>                        
-                        <b>Pricing</b> : $60 a person (bundle up to six players for $350)
+                        <b>Pricing</b> : $50 a person (bundle four players for $200)
                     </span>
 
                     <div class="product-btnContainer">
-                        <button>Reach out</button>
-                        <button>Check out</button>
+                        <a href="mailto:taylor@itgseattle.com"><button>Reach out</button></a>
+                        <a href="https://imagination-tailor-gaming.myshopify.com/products/4-ticket-bundle-obojima-game-seats-with-imogene-taylor-kids-tables?variant=43059738869819"><button>Check out</button></a>
                     </div>
 
                 </div>
@@ -254,12 +228,12 @@
                                 <path d="M5.16667 5.16667H5.175M16.4917 10.5083L10.5167 16.4833C10.3619 16.6383 10.1781 16.7612 9.97573 16.8451C9.7734 16.929 9.55653 16.9721 9.3375 16.9721C9.11847 16.9721 8.9016 16.929 8.69927 16.8451C8.49694 16.7612 8.31312 16.6383 8.15833 16.4833L1 9.33333V1H9.33333L16.4917 8.15833C16.8021 8.4706 16.9763 8.89302 16.9763 9.33333C16.9763 9.77364 16.8021 10.1961 16.4917 10.5083Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </span>                        
-                        <b>Pricing</b> : $60 a person (bundle up to six players for $350)
+                        <b>Pricing</b> : $50 a person (bundle four players for $200)
                     </span>
 
                     <div class="product-btnContainer">
-                        <button>Reach out</button>
-                        <button>Check out</button>
+                        <a href="mailto:taylor@itgseattle.com"><button>Reach out</button></a>
+                        <a href="https://imagination-tailor-gaming.myshopify.com/products/4-ticket-bundle-obojima-game-seats-with-imogene-taylor-18?variant=43062484107323"><button>Check out</button></a>
                     </div>
 
                 </div>
@@ -271,23 +245,13 @@
 
         </section>
 
+        <h1>Community Events</h1>
+
+        <div><h2>More news coming soon!</h2></div>
+
     </main>
 
-    <footer>
-        <img src="img/ForeGround.png" alt="" class="footerImg">        
-        <div class="footerLogo">
-            <img src="img/LogoText_White.svg" alt="Itg logo white">
-        </div>
-
-        <div class="footerInfo" >
-
-            <!--<h3>Imogene Tailor & Adi Stein</h3>
-            <h4>Professional DM's</h4>
-            <Span>taylor@itgseattle.com</Span>-->
-            <h5>© 2026 Imagination Tailor Gaming. All rights reserved.</h5>
-
-        </div>
-    </footer>
+    <footer id="footer"></footer>
 
     <script>
     const carousel = document.getElementById("eventCarousel");
@@ -323,4 +287,12 @@
     });
     </script>
 </body>
+
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        });
+</script>
 </html>
