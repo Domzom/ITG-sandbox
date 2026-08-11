@@ -36,12 +36,23 @@ function fitAllMonthTexts() {
     //heroElements.forEach(el => fitTextToWidth(el, 35, 8));
 }
 
+function convertNav(){
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+        const isOpen = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen);
+    });
+}
+
+function clickNav(){
+    
+}
+
 async function loadIncludes(){
     try {
                 const headerResponse = await fetch('header.html');
                 const footerResponse = await fetch('footer.html');
-
-                console.log(document)
                 
                 if (headerResponse.ok) {
                     document.getElementById('header').innerHTML = await headerResponse.text();
@@ -57,6 +68,10 @@ async function loadIncludes(){
         
 // Load includes when page is ready
 document.addEventListener('DOMContentLoaded', loadIncludes);
+
+document.addEventListener('DOMContentLoad', convertNav);
+document.addEventListener('resize', convertNav);
+document.addEventListener('click', convertNav)
 
 window.addEventListener("load", fitAllMonthTexts);
 window.addEventListener("resize", fitAllMonthTexts);

@@ -371,9 +371,6 @@ nav a:hover {
     margin: 0;
 }
 
-.staffBios h1 {
-    margin-top: 3em;
-}
 
 .staffBios .iconHolder svg path {
     stroke: gray;
