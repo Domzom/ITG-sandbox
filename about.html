@@ -10,43 +10,14 @@
     <link rel="icon" href="img/ITG_favcon.svg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.typekit.net/faf1xye.css">
+    <script src="js/script.js"></script>
+
 
 </head>
 
-<body>
+<body>    
 
-    <header>
-
-       <div class="headercontainer">
-            <nav class = "navbar">
-                <span id="mainLogo">
-                    <img src="img/logo_home_colored.svg" alt="">
-                </span>
-                <ul class="nav-links", id="navLinks">
-                    <li><a href="/index.html" class="hover-underline-animation center">home</a></li>
-                    <li><a href="/about.html" class="hover-underline-animation center">about</a></li>
-                    <li><a href="/contact.html" class="hover-underline-animation center">contact</a></li>
-                </ul>
-                <button class="nav-toggle", id="navToggle", aria-expanded='false', aria-controls="navLinks">&#9776;</button>
-                <div class="shopify-btn-container">
-                    <div class="text-box">
-                        <a href="https://imagination-tailor-gaming.myshopify.com" target="_blank" rel="noopener noreferrer" class="btn-shopify  btn-shopify-animated">Access<br>Shopify</a>
-                    </div>
-                </div>
-            </nav>
-
-            <script>
-                const toggle = document.getElementById('navToggle');
-                const links = document.getElementById('navLinks');
-                toggle.addEventListener('click', () => {
-                    const isOpen = links.classList.toggle('open');
-                    toggle.setAttribute('aria-expanded', isOpen);
-                });
-            </script>
-
-        </div>
-    </header>
-    
+    <header id="header"></header>
 
     <main class="container">
 
@@ -100,6 +71,8 @@
                 <h2>
         </section>
     </main>
+
+    <footer id="footer"></footer>
 
 </body>
 </html>

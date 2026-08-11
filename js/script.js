@@ -36,5 +36,27 @@ function fitAllMonthTexts() {
     //heroElements.forEach(el => fitTextToWidth(el, 35, 8));
 }
 
+async function loadIncludes(){
+    try {
+                const headerResponse = await fetch('header.html');
+                const footerResponse = await fetch('footer.html');
+
+                console.log(document)
+                
+                if (headerResponse.ok) {
+                    document.getElementById('header').innerHTML = await headerResponse.text();
+                }
+                
+                if (footerResponse.ok) {
+                    document.getElementById('footer').innerHTML = await footerResponse.text();
+                }
+            } catch (error) {
+                console.error('Error loading includes:', error);
+            }
+        }
+        
+// Load includes when page is ready
+document.addEventListener('DOMContentLoaded', loadIncludes);
+
 window.addEventListener("load", fitAllMonthTexts);
 window.addEventListener("resize", fitAllMonthTexts);
